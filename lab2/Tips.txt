@@ -1,0 +1,8 @@
+Step over:
+Just show the result of that line.
+
+Step into:
+Show the result of the next step of that line. If that line called other function, it will jump into the function that line called. 
+
+Step over:
+Jump out of current function and show the result.
