@@ -1,0 +1,27 @@
+Lecture 1.1 Welcome to CS61B
+What is 61b about?
+  Efficiency
+    Algorithms
+    Data structures
+  Programming
+    Tool: git, IntelliJ, JUnit, line tools, Java
+point
+object oriented programming
+recrusion ตÝน้
+list
+tree
+
+How to learn?
+ Lecture & reading
+ Labs, HW, Section, Projects.
+
+Most important thing: Practice
+
+Defining function in Java
+The new piece of syntax here is that we declared our method using the keywords public static, which is a very rough analog of Python's def keyword.
+
+Comment:
+// Line comment
+/* and */ Block comment
+/** and */ Javadoc comment
+The widely used javadoc tool can be used to generate HTML descriptions of your code.
