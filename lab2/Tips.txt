@@ -6,3 +6,15 @@ Show the result of the next step of that line. If that line called other functio
 
 Step over:
 Jump out of current function and show the result.
+
+Resume program:
+We can click this botton to directly get every result of the breakpoint's line which is in a cycle.
+
+Condition:
+By setting condition of breakpoint, we can directly get the step under the condition we set.
+
+Connect two Intlist (A, B) by Non-destructed method:
+We don't need copy whole B list into new list, because the last node of new list can just point to B, and B printer is not changed.
+For recursion:
+Step 1: considering the end conditon.
+Step 2: considering recursion formula.
