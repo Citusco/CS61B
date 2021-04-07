@@ -1,0 +1,38 @@
+链表为什么需要哨兵？
+问题主要出现在空链表时，情况如下
+不带哨兵的链表：
+当链表为空时，first -> null。
+此时如果进行addlast操作，即进行firtst.next操作时，会造成空指针错误，必须增加空链表的判定，降低代码可读性。
+例如：
+//生成空链表
+public SLList() {
+    first = null;
+    size = 0;
+}
+//常规的addlast操作
+public void addLast(int x) {
+    size += 1;
+    IntNode p = first;
+//此处若直接判定p.next != null时会造成空指针错误。就必须加上空链表判定。
+    if (first == null) {
+        first = new IntNode(x, null);
+        return;
+    }
+    while (p.next != null) {
+        p = p.next;
+    }
+
+    p.next = new IntNode(x, null);
+}
+
+带哨兵的链表：
+头节点永远存在，因此senitel.next永远不为空。
+public SLList(int x) {
+	sentinel = new IntNode(63, null);
+	sentinel.next = new IntNode(x, null);
+	size = 1;
+}
+public SLList() {
+	sentinel = new IntNode(63, null);
+	size = 0;
+}

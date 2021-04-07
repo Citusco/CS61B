@@ -10,12 +10,12 @@ public class SLList{
 	private IntNode sentinel;
 	private int size;
 
-	public void SLList(int x){
+	public SLList(int x) {
 		sentinel = new IntNode(63, null);
 		sentinel.next = new IntNode(x, null);
 		size = 1;
 	}
-	public SLList(){
+	public SLList() {
 		sentinel = new IntNode(63, null);
 		size = 0;
 	}
@@ -38,11 +38,50 @@ public class SLList{
         prt.next = new IntNode(x, null);
         size += 1;
     }
-
-
-    /** Returns the number of items in the list using recursion. */
-    public int size(){
-    	return size;
+    /** Because SLList doesn't have next, recursive addLast method must call getLast method.
+    	To get the last IntNode and add node behind it.
+    */
+    private static IntNode getLastNode(IntNode p) {
+    	if (p.next == null) {
+    		return p;
+    	}
+    	return getLastNode(p.next);
     }
 
+    public void addLastRec(int x) {
+    	IntNode L = getLastNode(sentinel);
+    	L.next = new IntNode(x, null);
+    	size += 1;
+    }
+
+    public int getLast() {
+    	IntNode L = getLastNode(sentinel);
+    	return L.item;
+    }
+
+    /** Returns the number of items in the list using recursion. */
+    /** Returns the size of the list that stars at IntNode p.*/
+    private static int size (IntNode p) {
+    	if (p.next == null) {
+    		//Because of sentinel.
+    		return 0;
+    	}
+    	return 1 + size(p.next);
+    }
+
+    public int size(){
+    	return size(sentinel);
+    }
+
+    public static void main (String[] args) {
+    	SLList testList = new SLList(15);
+    	testList.addLastRec(2);
+    	testList.addFirst(1);
+    	testList.addLast(2);
+    	testList.addLastRec(5);
+    	System.out.println("the first item is " + testList.getFirst());
+    	System.out.println("the size of testList is " + testList.size);
+    	System.out.println("the sizeRec of testList is " + testList.size());
+    	System.out.println("the last item is " + testList.getLast());
+    }
 }

@@ -13,6 +13,16 @@ public class IntList{
 		}
 		return 1 + this.rest.Size();
 	}
+	/** Why Size method below has nullpointer exception?
+		Because when it get the last node of list, it will still call this.rest.
+		However, this.rest is null! So the nullpointer exception is made.*/
+		
+	// public int Size() {
+	// 	if (this == null) {
+	// 		return 0;
+	// 	}
+	// 	return 1 + this.rest.Size();
+	// }
 	// no recursion
 	public int iterativeSize(){
 		IntList p = this;
@@ -42,5 +52,6 @@ public class IntList{
 		L = new IntList(5, L);
 		int temp = L.get(2);
 		System.out.println(temp);
+		System.out.println(L.Size());
 	}
 }
