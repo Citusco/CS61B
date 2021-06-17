@@ -1,0 +1,64 @@
+知识点：
+1.头尾哨兵/循环双链表
+为了操作一致以及代码可读性，常见的双链表构造方法为头尾哨兵法或循环双链表。
+2.arbitrary type (泛型)
+在类名字后加<任意名>
+即可在类中使用任意名为泛型
+实例化变量时在类后面加<变量类型> 定义具体的变量类型
+语法示例：
+public class DLList <random> {...}
+DLList <String> D1 = new DLList <> ("hello");
+DLList <Integer> D2 = new DLList <> (3);
+使用准则：
+1. 在实施数据结构的java文件中，在最顶端类名之后定义泛型名称。
+2. 在其他使用该数据结构的文件中，在声明时指定具体变量类型，并在实例化时使用空括号<>。（如例中所示）
+3. 如果用8种原始数据类型实例化泛型，需要用原始名称，即大写。Integer, Double, Character, Boolean, Long, Short, Byte, or Float。
+
+
+
+Tips:
+在进行链表操作时，大脑内要想象链表的关系图，清晰地梳理先后操作，例如需要先将谁指向谁后才能断开连接。
+
+Public class DLList {
+	public static class DLNode{
+		public int item;
+		public DLNode prev;
+		public DLNode next;
+		public DLNode (int x, DLNode p, DLNode n) {
+		item = x;
+		prev = p;
+		next = n;
+	}
+	
+	private DLNode sentinel;
+	private int size;
+
+	public DLlist () {
+	sentinel = new DLNode (63, null, null);
+	sentinel.next = sentinel;
+	sentinel.prev = sentinel;
+	size = 0;
+	}
+	
+	public DLlist (int x) {
+	sentinel = new DLNode (63, null, null);
+	sentinel.next = new DLNode (x, sentinel, null);
+	sentinel.prev = sentinel;
+	size = 1;
+	}	
+	
+	public void addLast (int x) {
+	sentinel.prev.next = new DLList (x, sentinel.prev, sentinel);
+	sentinel.prev = sentinel.prev.next;
+	size += 1;
+	}
+	
+	public DLNode getLast () {
+	return sentinel.prev;
+	}
+
+	public void removeLast () {
+	sentinel.prev = sentinel.prev.prev;
+	sentinel.prev.next = sentinel;
+	}
+}
