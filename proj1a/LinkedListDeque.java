@@ -133,29 +133,29 @@ public class LinkedListDeque <T> {
         }
     }
 
-    public static void main (String[] arg) {
-        LinkedListDeque<Integer> testList = new LinkedListDeque<Integer>();
-//        System.out.println(testList.isEmpty());
-//        System.out.println(testList.size());
-//        System.out.println(testList.get(-1));
-//        System.out.println(testList.get(0));
-        testList.addFirst(1);
-        testList.addFirst(2);
-        testList.addFirst(3);
-        LinkedListDeque<Integer> testList2 = new LinkedListDeque<Integer>(testList);
-        testList2.addLast(0);
-        testList2.printDeque();
-        testList.printDeque();
-        System.out.println(testList2.getRecursive(-1));
-        System.out.println(testList2.getRecursive(3));
-//        System.out.println(testList.get(0));
-//        System.out.println(testList.get(1));
-//        System.out.println(testList.get(2));
-//        System.out.println(testList.get(3));
-//        System.out.println(testList.removeFirst());
-//        System.out.println(testList.removeLast());
+//    public static void main (String[] arg) {
+//        LinkedListDeque<Integer> testList = new LinkedListDeque<Integer>();
+////        System.out.println(testList.isEmpty());
+////        System.out.println(testList.size());
+////        System.out.println(testList.get(-1));
+////        System.out.println(testList.get(0));
+//        testList.addFirst(1);
+//        testList.addFirst(2);
+//        testList.addFirst(3);
+//        LinkedListDeque<Integer> testList2 = new LinkedListDeque<Integer>(testList);
+//        testList2.addLast(0);
+//        testList2.printDeque();
 //        testList.printDeque();
-//        System.out.println(testList.size());
-    }
+//        System.out.println(testList2.getRecursive(-1));
+//        System.out.println(testList2.getRecursive(3));
+////        System.out.println(testList.get(0));
+////        System.out.println(testList.get(1));
+////        System.out.println(testList.get(2));
+////        System.out.println(testList.get(3));
+////        System.out.println(testList.removeFirst());
+////        System.out.println(testList.removeLast());
+//////        testList.printDeque();
+//////        System.out.println(testList.size());
+//    }
 }
 
