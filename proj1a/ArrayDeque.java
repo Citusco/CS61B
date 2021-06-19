@@ -3,7 +3,7 @@ public class ArrayDeque<T> {
     private int size;
     private int first;
     private int last;
-    private static final int initialCapacity = 8;
+    private static final int INITIALCAPACITY = 8;
     /*the helper that get the position in front of the index's.*/
     private int minusOne(int index) {
         index = index - 1;
@@ -29,7 +29,7 @@ public class ArrayDeque<T> {
         /*get the position of first item.*/
         int startPos = plusOne(first);
         /*copy every item to the new array*/
-        for (int i = 0; i < size; i ++) {
+        for (int i = 0; i < size; i++) {
             newItems[i] = items[startPos];
             startPos = plusOne(startPos);
         }
@@ -41,7 +41,7 @@ public class ArrayDeque<T> {
     }
     /*Creat an empty array deque.*/
     public ArrayDeque() {
-        items = (T[]) new Object[initialCapacity];
+        items = (T[]) new Object[INITIALCAPACITY];
         size = 0;
         /*according to the requirement of project 1A.
         * first located in the rear of array.
@@ -109,7 +109,7 @@ public class ArrayDeque<T> {
     public void printDeque() {
         /*get the first position of items.*/
         int startPos = plusOne(first);
-        for (int i = 0; i < size; i ++) {
+        for (int i = 0; i < size; i++) {
             System.out.println(items[startPos] + " ");
             startPos = plusOne(startPos);
         }
@@ -117,7 +117,7 @@ public class ArrayDeque<T> {
     }
     /*get the item at the given index, where 0 is the front.*/
     public T get(int index) {
-        if (index >= size || index < 0){
+        if (index >= size || index < 0) {
             return null;
         }
         return items[plusI(first, index + 1)];
