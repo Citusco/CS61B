@@ -77,7 +77,7 @@ public class LinkedListDeque<T> {
     public T removeFirst() {
         if (size == 0) {
             return null;
-        }else {
+        } else {
             T firstItem = (T) sentinel.next.item;
             sentinel.next = sentinel.next.next;
             sentinel.next.prev = sentinel;
@@ -90,7 +90,7 @@ public class LinkedListDeque<T> {
     public T removeLast() {
         if (size == 0) {
             return null;
-        }else {
+        } else {
             T lastItem = (T) sentinel.prev.item;
             sentinel.prev = sentinel.prev.prev;
             sentinel.prev.next = sentinel;
@@ -103,7 +103,7 @@ public class LinkedListDeque<T> {
     public T get(int index) {
         if (index > size - 1 || size == 0 || index < 0) {
             return null;
-        }else {
+        } else {
             DNode p = sentinel.next;
             for (int i = 0; i < index; i += 1) {
                 p = p.next;
@@ -115,7 +115,7 @@ public class LinkedListDeque<T> {
     private DNode getRecursiveHelper(DNode p, int x) {
         if (x == 0) {
             return p;
-        }else {
+        } else {
             return getRecursiveHelper(p.next, x - 1);
         }
     }
