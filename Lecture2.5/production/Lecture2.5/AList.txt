@@ -1,0 +1,14 @@
+数据结构：
+private T items [];
+private int size;
+
+方法：
+addLast;
+getLast;
+get;
+size;
+
+Tips:
+元素数量=size
+addLast的位置=size
+最后一个元素=size - 1

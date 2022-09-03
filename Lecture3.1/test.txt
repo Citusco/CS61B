@@ -1,0 +1,24 @@
+org.junit.Assert.assertArrayEquarls(expected, input);
+org.junit提供了大量可供用于测试的语句
+上述语句中可以判断expected和input两个数组中的各元素是否一致。
+相当于
+for (int i = 0; i < input.length; i += 1) {
+            if (!input[i].equals(expected[i])) {
+                System.out.println("Mismatch in position " + i + ", expected: " + expected + ", but got: " + input[i] + ".");
+                break;
+            }
+}
+
+选择排序
+for (int i = 0; i < x.length; i++) {
+	int init = x[i];
+	int smallestP = i;
+	for(j = i + 1; j < x.length; j++) {
+		if (x[j] < init){
+			init = x[j];
+			smallestP = j;
+		}
+	}
+	x[smallestP] = x[i];
+	x[i] = init;
+}

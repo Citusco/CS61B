@@ -1,0 +1,26 @@
+数据结构：
+private T items [];
+private int size;
+
+方法：
+addLast;
+getLast;
+get;
+size;
+
+Tips:
+元素数量=size
+addLast的位置=size
+最后一个元素=size - 1
+
+泛型数组
+Java不允许直接创建泛型泛型数组。
+例如T[] items = new T[100]; 会报编译错误
+创建方法为：
+T[] items = (T[]) new Object[100];
+
+释放内存
+当对变量赋值null时，java会释放相应的内存。
+对于AList来说，如果remove时只让size = size - 1,那么相应的内存仍然存储着之前的item。
+因此要加上 items[size - 1] = null;
+这样可以释放被移除的变量。

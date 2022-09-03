@@ -1,0 +1,6 @@
+private and static:
+private：相对static而言，更像是一种权限的描述。由private标记的变量/方法，只能通过class中的方法修改或调用，无法在外部直接修改或调用。
+static：相对private而言，更像是一种所有权的描述，即static的变量/方法是属于class的，不属于任何一个instance。而non-static变量是属于instance的。
+nested class：
+内部类，类中定义类。
+static class：static只能用于描述内部类，外部类不能加static。如此描述的内部类不能访问外部类的方法/变量，并且在类加载时进行加载，优点是能够节省内存。

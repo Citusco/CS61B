@@ -1,0 +1,44 @@
+链表为什么需要哨兵？
+答：为了操作一致。
+不带头节点：那么头指针直接指向第一个节点。头指针结构与头节点不一致，那么需要定义两种操作，即链表空时插入第一个节点/不空时插入节点。
+带头节点：   因为头节点结构与常规节点一致（item, next），那么无论链表空与否，插入节点的操作一致，代码可读性更强。
+
+详解：
+不带哨兵的链表：
+当链表为空时，first -> null。
+此时如果进行addlast操作，即进行firtst.next操作时，会造成空指针错误，必须增加空链表的判定，降低代码可读性。
+例如：
+//生成空链表
+public SLList() {
+    first = null;
+    size = 0;
+}
+//常规的addlast操作
+public void addLast(int x) {
+    size += 1;
+    IntNode p = first;
+//此处若直接判定p.next != null时会造成空指针错误。就必须加上空链表判定。
+    if (first == null) {
+        first = new IntNode(x, null);
+        return;
+    }
+    while (p.next != null) {
+        p = p.next;
+    }
+
+    p.next = new IntNode(x, null);
+}
+
+带哨兵的链表：
+头节点永远存在，因此senitel.next永远不为空。
+public SLList(int x) {
+	sentinel = new IntNode(63, null);
+	sentinel.next = new IntNode(x, null);
+	size = 1;
+}
+public SLList() {
+	sentinel = new IntNode(63, null);
+	size = 0;
+}
+
+通俗版本：头节点相当于是乐高积木，尽管放在第一个，但是他的结构和任何一个节点都一样。
