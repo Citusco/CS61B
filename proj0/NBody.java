@@ -1,5 +1,5 @@
 public class NBody {
-    public static String backGround = "./images/starfield.jpg";
+    private static String backGround = "./images/starfield.jpg";
     public static double readRadius (String path) {
         In in = new In (path);
         // Skip the first parameter in the file.
